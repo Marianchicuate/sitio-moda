@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MAR Moda</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #DDF;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen de la etiqueta div contenedora. El margen inferior restante lo mantendrá separado de los elementos de que le sigan. */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+
+/* ~~ este contenedor rodea a todas las demás divs, lo que les asigna su anchura basada en porcentaje ~~ */
+.container {
+	width: 80%;
+	max-width: 900px;/* puede que sea conveniente una anchura máxima (max-width) para evitar que este diseño sea demasiado ancho en un monitor grande. Esto mantiene una longitud de línea más legible. IE6 no respeta esta declaración. */
+	min-width: 1550px;/* puede que sea conveniente una anchura mínima (min-width) para evitar que este diseño sea demasiado estrecho. Esto permite que la longitud de línea sea más legible en las columnas laterales. IE6 no respeta esta declaración. */
+	background-color: #FEF4FF;
+	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño. No es necesario si establece la anchura de .container en el 100%. */
+}
+
+/* ~~ no se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. Contiene un marcador de posición de imagen que debe sustituirse por su propio logotipo vinculado ~~ */
+.header {
+	background-color: #DDF;
+}
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de las divs. Los elementos situados dentro de estas divs tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral a la div propiamente dicha, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en una div configurada para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de divs para las que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla de la div para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos divs de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la izquierda en lugar de a la derecha, simplemente haga que estas columnas floten en dirección opuesta (todas a la izquierda en lugar de todas a la derecha) y éstas se representarán en orden inverso. No es necesario mover las divs por el código fuente HTML.
+
+*/
+.sidebar1 {
+	float: right;
+	width: 20%;
+	background-color: #DDF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 80%;
+		float: right; 
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	text-decoration: none;
+	background-color: #DDF;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #6F7D94;
+	color: #FFF;
+}
+
+/* ~~ El pie de página ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #FF97CB;
+	position: relative;/* esto da a IE6 hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+
+/* ~~ clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* este margen negativo de 1 px puede situarse en cualquiera de las columnas de este diseño con el mismo efecto corrector. */
+ul.nav a { zoom: 1; }  /* la propiedad de zoom da a IE el desencadenante hasLayout que necesita para corregir el espacio en blanco extra existente entre los vínculos */
+</style>
+<![endif]--></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="../Imágenes/LOGO.png" width="184" height="137" style="background-color: #DDF; display: block;" /></a>  
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <B> <li><a href="J:\MI SITIO WEB\html\Pagina 2.html">Cabello 2023</a></li>
+      <li><a href="J:\MI SITIO WEB\html\Pagina 5.html">Estilos</a></li>
+      <li><a href="J:\MI SITIO WEB\html\Pagina 3.html">Tiendas de ropa</a></li>
+      <li><a href="J:\MI SITIO WEB\html\pagina 4.html">Outfits tips</a></li> </B>
+    </ul>
+    <p> Hay secciones con diferentes temas que pueden interesarte, con un click puedes acceder a ellos. Son temas a cerca de la moda, tips, etc. Hay apoyos visuales (imagenes). </p>
+    
+    <b> <p>Si desea contactarme sólo pase el mouse sobre las siguientes iconos y aparecerá la información de contacto...</p></b>
+    <img src="../Imágenes/MENSAJE.png" width="254" height="154" title="mariandelacruz30@gmail.com" />
+    <img src="../Imágenes/TELEFONITO.png" width="256" height="187" title="6651469732" />
+    <img src="../Imágenes/personita.png" width="332" height="211" title="Marian Ch." />
+    
+<!-- end .sidebar1 --></div>
+    
+  <div class="content">
+  
+    <CENTER> <FONT color="#B3FFB3"> <H1> <u>Hablemos de moda </u></H1> </FONT> </CENTER>
+    
+    <img src="../Imágenes/icono de moda.png" width="161" height="128"/><FONT size="+2" face="Times New Roman, Times, serif"><B>¿Qué es la moda?</B> La moda puede ser definida como un mecanismo que regula las elecciones de las personas ya que, por una especie de presión social, indica a la gente qué debe consumir, utilizar o hacer. La moda se convierte en un hábito repetitivo que identifica a un sujeto o a un grupo de individuos.</FONT>
+    <p align="justify">&nbsp;</p>
+    <p align="justify"><FONT size="+2" face="Times New Roman, Times, serif"><B> Historia:</B> El uso de la ropa se remonta a hace miles de años; sin embargo, el concepto de moda como tal empezó en el Renacimiento cuando surgió la profesión de los costureros. Algunos estilos permanecen y se han convertido en clásicos; otros, solo pasajeros, han marcado a generaciones. En el siglo XIV cuando se comienza a tener un concepto de moda. A partir de entonces ha habido diferentes diseñadores y prendas  que han marcado época y hablamos de historia de la moda. El vestido surge como una necesidad básica para el hombre. Con el tiempo el vestido ha adquirido un carácter estético, por cuanto ha reflejado el gusto y el carácter de su portador, y se ha ido convirtiendo en un adorno más de la persona, sujeto a los cánones de la moda y del devenir artístico de cada civilización.  </FONT> </p>
+    <p align="justify">&nbsp;</p>
+    <p><CENTER>
+    <img src="../Imágenes/1700.jpg" width="239" height="341" />
+    <img src="../Imágenes/1760.jpg" width="228" height="342" /> 
+    <img src="../Imágenes/1910.png" width="327" height="342" />
+       <img src="../Imágenes/1940.png" width="305" height="339" />
+    <img src="../Imágenes/1990.png" width="210" height="343" />
+    <img src="../Imágenes/fast fashion.png" width="465" height="344" />
+    </CENTER></p>
+    
+<CENTER> <FONT  color="#FFC6E2" > <h1>&nbsp;</h1>
+  <h1><u>Ropa de temporada 2023 </u></h1>
+</FONT>
+</CENTER>
+    <FONT size="+2" face="Times New Roman, Times, serif">
+    <P align="justify"> Las temporadas en la industria de la moda, son una forma de dividir el año para presentar colecciones que se adapten a las necesidades de los consumidores. Se ajustan principalmente al clima, es por eso que las colecciones se presentan con 6 meses de anticipación. La industria de la moda divide el año en dos estaciones: primavera-verano y otoño-invierno. En febrero se presentan las colecciones de otoño-invierno que llegarán a las tiendas a finales de agosto. En septiembre se presentan las colecciones de primavera-verano que llegarán a las tiendas en febrero.    </p>
+    </FONT>
+   <CENTER> <img src="../Imágenes/SOL.png" width="264" height="256" /> 
+    <img src="../Imágenes/COPOS DE NIEVE.png" width="400" height="237" />
+   </CENTER>
+   
+    <FONT  color="#FFBBBB"> 
+    <h1>&nbsp;</h1>
+    <h1><u>Primavera - Verano </u></h1>
+    </FONT>
+    <FONT size="+2" face="Times New Roman, Times, serif"> <p align="justify">Lo que más se usará en esta estación es lo siguiente: flores, colores pastel y fosforescentes, tejidos ligeros, sombreros, sandalias finas, cuero, transparencias, mini faldas, botas, plataformas, animal print, pantalones a la cadera... Imágenes de referencia: </p>
+    <p align="justify">&nbsp;</p>
+    </FONT>
+   
+      <CENTER> <img src="../Imágenes/vestido pv.jpg" width="369" height="321" />  
+        <img src="../Imágenes/pantaloon pv.png" width"384" height="322"/>
+        <img src="../Imágenes/pantt.jpg" width="253" height="322" />
+      <img src="../Imágenes/transparente.jpg" width="253" height="322" />     </CENTER>
+    <FONT color="#CAE4FF">
+      <h1>&nbsp;</h1>
+      <h1><u>Otoño - Invierno </u></h1> 
+      </FONT>
+    <FONT size="+2" face="Times New Roman, Times, serif"> <p align="justify"> Incluso en invierno, dependiendo el país, puede haber muchas variaciones climáticas, no siempre frías. Con eso en mente, es importante que observes y adaptes las tendencias a la realidad de tu consumidor.
+Ahora que lo sabes, considera lo que estará de moda la próxima temporada y planifica la creación de tu moda Otoño/Invierno. Invierte en colores más atrevidos, pero también en tonos pastel y tierra: azul rey, café, rojo blanco, naranja, verde quemado, negro, morado, así como acabados mate.</p>
+    <p align="justify">&nbsp;</p>
+    </FONT>
+
+   <CENTER>  <table width="200">
+  <tr>
+    <td> <CENTER> <img src="../Imágenes/negro.jpg" width="245" height="297" /> </CENTER></td>
+    <td><CENTER> <img src="../Imágenes/azull.jpg" width="245" height="304"/> </CENTER> </td>
+  </tr>
+  <tr>
+   
+  </tr>
+  <tr> 
+    <td> <CENTER> <img src="../Imágenes/abrigos.jpeg" width="276" height="315"/> </CENTER></td>
+    <td> <CENTER> <img src="../Imágenes/vaqueross.jpeg" width="276" height="315"/> </CENTER></td>
+</table> </CENTER>
+
+  <FONT color="#99FFCC"> <h1>&nbsp;</h1>
+  <h1><u>Zapatos </u></h1>
+  </FONT>
+ 
+ <FONT size="+1" face="Times New Roman, Times, serif"> <table width="1051"> 
+  <tr>
+    <td><img src="../Imágenes/botas rosas.jpg" width="274" height="283" /></td>
+    <td><p><font size="+1" face="Times New Roman, Times, serif"><strong>Las botas a todo color</strong></font></p>
+      <p>Ya hemos visto en el street style de las distintas Semanas de la Moda. Atreverse o no, esa es la cuestión.  Juega con otros colores e inspírate en la estética disco. </p></td>
+    <td><img src="../Imágenes/tacon de charol.jpg" width="274" height="283" /></td>
+    <td><p><strong>Kitten Heels</strong></p>
+      <p>A medio camino entre el tacón de aguja y las colosales plataformas nos topamos con este discreto tacón de no más de cinco centímetros, te da elegancia y comodidad.</p></td>
+  </tr>
+  <tr>
+    <td><img src="../Imágenes/mary jane.jpg" width="274" height="283" /></td>
+    <td><p><strong>Mary Jane</strong></p>
+      <p>Veremos modelos con plataforma, hebillas gruesas o con adornos. También de colores tan llamativos como el rojo. Consiguen ponerle ese fascinante toque girly al look en un solo gesto. </p></td>
+    <td><img src="../Imágenes/mocasineeees.jpg" width="274" height="283" /></td>
+    <td><p><strong>Mocasines</strong></p>
+      <p>Los veremos sencillos y de estilo clásico, sal de tu zona de confort y atrevéte a llevarlos con calcetines.</p></td>
+  </tr>
+  <tr>
+    <td><img src="../Imágenes/mules con brillo.jpg" width="274" height="283" /></td>
+    <td><p><strong>Zapatos de strass</strong></p>
+      <p>El calzado joya (literalmente) será una de las tendencias más potentes del nuevo año. Y trasciende del terreno de fiesta. Llevarlo con prendas más bien sobrias es la clave para destacar sin saturar.</p></td>
+    <td><img src="../Imágenes/sandalias.jpg" width="274" height="283" /></td>
+    <td><p><font size="+1" face="Times New Roman, Times, serif"><strong>Sandalias Thong</strong>  </font></p>
+      <p>De aire minimalista, directamente rescatadas de los 90, las thong sandals estarán de vuelta.</p></td>
+  </tr>
+  </td>
+  </tr>
+</table> </FONT>
+
+ 
+   <!-- end .content --></div>
+  <div class="footer">
+    <p align="right"><strong><em>Proyecto de ámbito escolar; estudiante de COBACH Plantel Tecate Capacitación en TIC'S </em></strong><img src="../Imágenes/logo cobach.png" width="283" height="59" /></p>
+    
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>

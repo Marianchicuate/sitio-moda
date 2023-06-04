@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MAR Outfits</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #DDF;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen de la etiqueta div contenedora. El margen inferior restante lo mantendrá separado de los elementos de que le sigan. */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+
+/* ~~ este contenedor rodea a todas las demás divs, lo que les asigna su anchura basada en porcentaje ~~ */
+.container {
+	width: 80%;
+	max-width: 900px;/* puede que sea conveniente una anchura máxima (max-width) para evitar que este diseño sea demasiado ancho en un monitor grande. Esto mantiene una longitud de línea más legible. IE6 no respeta esta declaración. */
+	min-width: 1550px;/* puede que sea conveniente una anchura mínima (min-width) para evitar que este diseño sea demasiado estrecho. Esto permite que la longitud de línea sea más legible en las columnas laterales. IE6 no respeta esta declaración. */
+	background-color: #FEF4FF;
+	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño. No es necesario si establece la anchura de .container en el 100%. */
+}
+
+/* ~~ no se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. Contiene un marcador de posición de imagen que debe sustituirse por su propio logotipo vinculado ~~ */
+.header {
+	background-color: #DDF;
+}
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de las divs. Los elementos situados dentro de estas divs tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral a la div propiamente dicha, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en una div configurada para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de divs para las que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla de la div para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos divs de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la izquierda en lugar de a la derecha, simplemente haga que estas columnas floten en dirección opuesta (todas a la izquierda en lugar de todas a la derecha) y éstas se representarán en orden inverso. No es necesario mover las divs por el código fuente HTML.
+
+*/
+.sidebar1 {
+	float: right;
+	width: 20%;
+	background-color: #DDF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 80%;
+		float: right;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	text-decoration: none;
+	background-color: #DDF;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #6F7D94;
+	color: #FFF;
+}
+
+/* ~~ El pie de página ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #FF97CB;
+	position: relative;/* esto da a IE6 hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+
+/* ~~ clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* este margen negativo de 1 px puede situarse en cualquiera de las columnas de este diseño con el mismo efecto corrector. */
+ul.nav a { zoom: 1; }  /* la propiedad de zoom da a IE el desencadenante hasLayout que necesita para corregir el espacio en blanco extra existente entre los vínculos */
+</style>
+<![endif]--></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="../Imágenes/LOGO.png"  width="184" height="137" style="background-color: #DDF; display:block;"/></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <B> <li><a href="J:\MI SITIO WEB\html\Pagina.html">Hablemos de moda</a></li>
+      <li><a href="J:\MI SITIO WEB\html\Pagina 5.html">Estilos</a></li>
+      <li><a href="J:\MI SITIO WEB\html\Pagina 2.html">Cabello 2023</a></li>
+      <li><a href="J:\MI SITIO WEB\html\Pagina 3.html">Tiendas</a></li> 
+      </B>
+    </ul>
+    
+    <p>Hay secciones con diferentes temas que pueden interesarte, con un click puedes acceder a ellos. Son temas a cerca de la moda, tips, etc. Hay apoyos visuales (imagenes). </p>
+    <p><b>Si desea contactarme sólo pase el mouse sobre las siguientes iconos y aparecerá la información de contacto...</b></p>
+    <img src="../Imágenes/MENSAJE.png" width="254" height="154" title="mariandelacruz30@gmail.com" />
+    <img src="../Imágenes/TELEFONITO.png" width="256" height="187" title="6651469732" />
+    <img src="../Imágenes/personita.png" width="332" height="211" title="Marian Ch." />
+    <!-- end .sidebar1 --></div>
+    
+  <div class="content">
+  
+  <CENTER> <p> <h1> <font color="#FF3E9E"><u>¿Qué tipo de cuerpo tengo?</u></font></h1>
+    <p>&nbsp;</p>
+  </CENTER>
+  
+  <p><FONT size="+2" face="Times New Roman, Times, serif"> Para armar un buen outfit es necesario que conozcamos la simetría de nuestro cuerpo y conocer las prendas que hacen que se vea mejor nuestro cuerpo. </FONT></p>
+  <p>
+  <CENTER> <img src="../Imágenes/simmm.jpg" width="674" height="437" />  </CENTER>
+  </p>
+  
+  <CENTER> 
+    <p>&nbsp;</p>
+    <FONT size="+1" face="Times New Roman, Times, serif"><table width="605" height="473" border="0">
+  <tr>
+    <td><img src="../Imágenes/triangulo.jpg" width="343" height="392" /></td>
+    <td>Las mujeres con silueta de triángulo tienen la parte superior del cuerpo más estrecha, con unos hombros ligeramente más pequeños que las caderas. La cintura es también fina y suelen tener un trasero más pronunciado.</td>
+  </tr>
+</table> </FONT> </CENTER>
+
+  <CENTER> 
+    <p>&nbsp;</p>
+    <FONT size="+1" face="Times New Roman, Times, serif"><table width="709" border="0">
+  <tr>
+    <th bgcolor="#FF80C0"scope="col">Sí </th>
+    <th bgcolor="#FF80C0" scope="col">No</th>
+  </tr>
+  <tr>
+    <td  bgcolor="#F0E1FF">
+      <p>A utilizar colores brillantes, tonos fuertes y estampados en la parte superior. Crea a la vez contraste con colores neutros en la parte inferior para reequilibrar visualmente la figura.        </p>
+      <p>A los tirantes. Son perfectos para mujeres con esta figura, pues ayudan a marcar la atención en esta zona y potenciarla, especialmente los que tienen ondulaciones o mucho volumen.</p>
+      <p> A los tacones para estilizar y equilibrar la figura. En cuanto a complementos, opta por unos maxi pendientes o por un collar choker. </p></td>
+    <td bgcolor="#D7D7FF">
+      <p>A accesorios que resalten las caderas como cinturones gruesos o llamativos, volantes o bandoleras, añadirán mucho volumen a esa zona.</p>
+      <p>A pantalones o faldas a rayas horizontales y a los pantalones de talle bajo.
+        </p>
+      <p>A tops ajustados, acentuarán el desequilibrio que hay entre la parte superior e inferior del cuerpo. </p></td>
+  </tr>
+</table></FONT>
+    <p>&nbsp;</p>
+    <p><FONT size="+1" face="Times New Roman, Times, serif"> </FONT></p>
+  </CENTER>
+  <p><img src="file:///D|/MI SITIO WEB/Imágenes/out triangulo.jpg" width="328" height="331" />
+    <img src="file:///D|/MI SITIO WEB/Imágenes/triangulo 1.jpg" width="328" height="331" />
+    <img src="file:///D|/MI SITIO WEB/Imágenes/triangulo 2.jpg" width="328" height="331" /></p>
+  <p>&nbsp; </p>
+  <CENTER><FONT face="Times New Roman, Times, serif" size="+1"><table width="605"  height="473" border="0">
+  <tr>
+    <td><img src="../Imágenes/rectangulo.jpg" width="343" height="392"/></td>
+    <td>El cuerpo rectangular se caracteriza por la ausencia de curvas pronunciadas. La silueta de las mujeres con este tipo de cuerpo es rectas y la anchura de los hombros es igual a la de las caderas. La cintura está poco marcada y las piernas suelen ser alargadas.</td>
+  </tr>
+</table> </FONT> </CENTER>
+
+  <CENTER> 
+    <p>&nbsp;</p>
+    <FONT size="+1" face="Times New Roman, Times, serif"><table width="709" border="0">
+  <tr>
+    <th bgcolor="#FF80C0"scope="col">Sí </th>
+    <th bgcolor="#FF80C0" scope="col">No</th>
+  </tr>
+  <tr>
+    <td  bgcolor="#F0E1FF">
+      <p>A destacar la cintura. Utiliza cinturones, tanto en la cintura como en la cadera, para resaltar las curvas. Esto te permitirá crear nuevas siluetas y romper un poco con una línea más recta.        </p>
+      <p>A jugar con los efectos visuales para construir nuevas formas como, por ejemplo, generando volumen con capas, flecos o prendas voluminosas en uno de los tres puntos clave de tu silueta (hombros, cintura o caderas).</p></td>
+    <td bgcolor="#D7D7FF">
+      <p>A prendas oversize. Las prendas demasiado grandes no ayudarán a realzar tu figura.        </p>
+      <p>A los total look monocolor, tenderán a aplanar mucho tu silueta rectangular.</p></td>
+  </tr>
+</table></FONT>
+    <p>&nbsp;</p>
+    <p><FONT size="+1" face="Times New Roman, Times, serif"> </FONT></p>
+  </CENTER>
+  <p><img src="file:///D|/MI SITIO WEB/Imágenes/rectangulo 1.jpg" width="328" height="331" />
+    <img src="file:///D|/MI SITIO WEB/Imágenes/rectangulo 2.jpg" width="328" height="331" /></p>
+  <p>&nbsp; </p>
+  <CENTER><FONT face="Times New Roman, Times, serif" size="+1"><table width="605"  height="473" border="0">
+    <tr>
+      <td><img src="../Imágenes/reloj de arena.jpg" width="343" height="392" /></td>
+      <td>Tener este tipo de silueta es una cuestión de proporciones en la que entran en juego las caderas, los hombros y la cintura. Esto significa que puedes tener una silueta de reloj de arena tanto si eres alta o baja, como si eres de una constitución más delgada o curvy.</td>
+    </tr>
+</table> </FONT> </CENTER>
+  
+  <CENTER> 
+    <p>&nbsp;</p>
+    <FONT size="+1" face="Times New Roman, Times, serif"><table width="709" border="0">
+  <tr>
+    <th bgcolor="#FF80C0"scope="col">Sí </th>
+    <th bgcolor="#FF80C0" scope="col">No</th>
+  </tr>
+  <tr>
+    <td  bgcolor="#F0E1FF">
+      <p>Opta por escotes redondos o en forma de V.       </p>
+      <p> Blusas o camisetas entalladas.</p></td>
+    <td bgcolor="#D7D7FF">
+      <p>Evita prendas de estilo oversize<font size="+1" face="Times New Roman, Times, serif">.</font></p>
+      <p>Evita potenciar el volumen en caderas y hombros.</p>
+      <p> No sobrecargues la parte del pecho con estampados fuertes o volantes.</p></td>
+  </tr>
+</table></FONT>
+    <p>&nbsp;</p>
+  </CENTER>
+  <img src="file:///D|/MI SITIO WEB/Imágenes/out arena.jpg" width="328" height="331" />
+  <img src="file:///D|/MI SITIO WEB/Imágenes/arena 1.jpg" width="328" height="331" />
+  <img src="file:///D|/MI SITIO WEB/Imágenes/arena 2.jpg" width="328" height="331" />
+<p>    <!-- end .content -->
+</p>
+    <h1 align="center"><u><font color="#FF3E9E">¿Cómo armar nuestros outfits?</font></u></h1>
+    <p><font size="+2" face="Times New Roman, Times, serif"> La moda siempre ha sido una forma de expresión personal. Estos outfits están llenos de estilo y personalidad, y suelen incluir colores y patrones únicos que no se encuentran en la ropa tradicional. Tanto mujeres como hombres pueden destacar en su modo de vestir. Este estilo no es exclusivo de mujeres. Los hombres pueden proyectar mucho de sí mismos con este tipo de outfit. </font> </p>
+    <p><font size="+2" face="Times New Roman, Times, serif"><strong>1. Conoce tu estilo personal.</strong></font></p>
+    <p><font size="+2" face="Times New Roman, Times, serif">Conocer tu estilo personal es clave para crear el outfit perfecto. De modo que, esta es la primera clave para que luzcas original.</font></p>
+    <p><font size="+2" face="Times New Roman, Times, serif"><strong>2. Combina colores y patrones.</strong></font></p>
+    <p><font size="+2" face="Times New Roman, Times, serif">Los outfits  suelen incluir una combinación de colores y patrones únicos. Los patrones florales, geométricos o abstractos son comunes en los outfits aesthetic, pero no tengas miedo de experimentar con diferentes patrones. También puedes jugar con los colores, mezclando tonos complementarios o contrastantes para crear un look llamativo.</font></p>
+    <p><font size="+2" face="Times New Roman, Times, serif"><strong>3. Presta atención a los detalles.</strong></font></p>
+    <p><font size="+2" face="Times New Roman, Times, serif">Cuando vayas de compras, tómate tiempo para ver cada pieza. Observa la calidad de las prendas y, sobre todo, no caigas en la tentación de comprar lo primero que veas. Más bien, haz compras inteligentes.  Así pues, debes tener buen ojo para que el outfit proyecte en cada detalle tu propia personalidad y estilo.</font></p>
+    <p><font size="+2" face="Times New Roman, Times, serif"><strong>4. Siéntete cómodo.</strong></font></p>
+    <p><font size="+2" face="Times New Roman, Times, serif">Más allá de cualquier otro consejo, lo más importante es que te sientas cómodo y seguro con el outfit que elijas. Si una prenda no te hace sentir bien, déjala en el clóset. Al final del día, lo que importa es cómo te sientes con lo que llevas puesto. La moda es una forma de expresión personal, lo más importante es que seas tú mismo y por supuesto te sientas cómodo con lo que estás usando.</font></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+    
+    
+  <div class="footer">
+    <p align="right"><strong><em>Proyecto de ámbito escolar; estudiante de COBACH Plantel Tecate Capacitación en TIC'S </em></strong><img src="../Imágenes/logo cobach.png" width="267" height="65" /></p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
+

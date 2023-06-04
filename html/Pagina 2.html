@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>MAR Cabello</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #DDF;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen de la etiqueta div contenedora. El margen inferior restante lo mantendrá separado de los elementos de que le sigan. */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+
+/* ~~ este contenedor rodea a todas las demás divs, lo que les asigna su anchura basada en porcentaje ~~ */
+.container {
+	width: 80%;
+	max-width: 900px;/* puede que sea conveniente una anchura máxima (max-width) para evitar que este diseño sea demasiado ancho en un monitor grande. Esto mantiene una longitud de línea más legible. IE6 no respeta esta declaración. */
+	min-width: 1550px;/* puede que sea conveniente una anchura mínima (min-width) para evitar que este diseño sea demasiado estrecho. Esto permite que la longitud de línea sea más legible en las columnas laterales. IE6 no respeta esta declaración. */
+	background-color: #FEF4FF;
+	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño. No es necesario si establece la anchura de .container en el 100%. */
+}
+
+/* ~~ no se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. Contiene un marcador de posición de imagen que debe sustituirse por su propio logotipo vinculado ~~ */
+.header {
+	background-color: #DDF;
+}
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de las divs. Los elementos situados dentro de estas divs tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral a la div propiamente dicha, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en una div configurada para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de divs para las que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla de la div para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos divs de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la izquierda en lugar de a la derecha, simplemente haga que estas columnas floten en dirección opuesta (todas a la izquierda en lugar de todas a la derecha) y éstas se representarán en orden inverso. No es necesario mover las divs por el código fuente HTML.
+
+*/
+.sidebar1 {
+	float: right;
+	width: 20%;
+	background-color: #DDF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 80%;
+		float: right;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	text-decoration: none;
+	background-color: #DDF;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #6F7D94;
+	color: #FFF;
+}
+
+/* ~~ El pie de página ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #FF97CB;
+	position: relative;/* esto da a IE6 hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+
+/* ~~ clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* este margen negativo de 1 px puede situarse en cualquiera de las columnas de este diseño con el mismo efecto corrector. */
+ul.nav a { zoom: 1; }  /* la propiedad de zoom da a IE el desencadenante hasLayout que necesita para corregir el espacio en blanco extra existente entre los vínculos */
+</style>
+<![endif]--></head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="../Imágenes/LOGO.png"  width="184" height="137" style="background-color: #DDF; display:block;"/></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <B> <li><a href="J:\MI SITIO WEB\html\Pagina.html">Hablemos de moda</a></li>
+      <li><a href="J:\MI SITIO WEB\html\Pagina 5.html">Estilos</a></li>
+      <li><a href="J:\MI SITIO WEB\html\Pagina 3.html">Tiendas de ropa</a></li>
+      <li><a href="J:\MI SITIO WEB\html\pagina 4.html">Outfits tips</a></li> </B>
+    </ul>
+    
+    <p>Hay secciones con diferentes temas que pueden interesarte, con un click puedes acceder a ellos. Son temas a cerca de la moda, tips, etc. Hay apoyos visuales (imagenes). </p>
+    <p><b>Si desea contactarme sólo pase el mouse sobre las siguientes iconos y aparecerá la información de contacto...</b></p>
+    <p><img src="../Imágenes/MENSAJE.png" width="254" height="154" title="mariandelacruz30@gmail.com" />
+      <img src="../Imágenes/TELEFONITO.png" width="256" height="187" title="6651469732" />      </p>
+      <p><img src="../Imágenes/personita.png" width="332" height="211" title="Marian Ch." /></p>
+    
+    
+    
+    
+    
+    
+    
+    <!-- end .sidebar1 --></div>
+    
+  <div class="content">
+   <CENTER> <FONT color="#5BADFF"> <U> <h1>Cabello</h1> </U> </FONT> </CENTER>
+   <FONT size="+2" face="Times New Roman, Times, serif"> <img src="../Imágenes/CABELLOOO.png" width="172" height="162" />A la hora de apostar por un cambio de look, es mucha (y muy variada) la inspiración que recibimos. En un primer lugar, vemos los estilos que proponen los diseñadores sobre la pasarela. Consecuentemente, también somos testigos de lo que reina en el 'street style'. En segundo lugar se encuentran las alfombras rojas, donde las 'celebrities' nos crean auténticas necesidades 'beauty' en cada pose. Y, por último, acudimos a las redes sociales (Pinterest, sobre todo) en busca de los últimos detalles para saber qué  pedir exactamente en nuestra próxima cita en el salón. </FONT>
+    <p>&nbsp;</p>
+    </FONT>
+    
+    <FONT color="#ABABD6"> <U><h1>Tendencias de cortes de cabello</h1> </U> </FONT> 
+    <FONT size="+2" face="Times New Roman, Times, serif"> <p align="justify">En este sentido presenciamos la convivencia de dos tendencias completamente opuestas. Por un lado, la nueva necesidad de dejarse el pelo largo. Por otra, los siempre acertados cortes de pelo que favorecen, refrescan y hasta quitan años. Además, también somos testigos de la vuelta de dos microtendencias de lo más poderosas: el flequillo en todas sus versiones (cortina, corto, asimétrico, largo, de lado...) y la presencia de capas. Esto último ha sido el alivio 'beauty' de millones de mujeres cuyo pelo fino pedía a gritos un 'extra' de volumen.</p></FONT>
+    <p align="justify">&nbsp;</p>
+    
+    <CENTER> <FONT size="+1" face="Times New Roman, Times, serif"> <table width="960" height="677" border="0">
+   <tr>
+    <td width="241" height="224"><img src="../Imágenes/corte mariposa.jpg" width="241" height="315" /></td>
+    <td width="230"> <B><p>Corte mariposa</p></B>
+      <p>Es ideal, para chicas con poco pelo y/o muy fino. Esto se debe a que aporta volumen, densidad y movimiento sin esfuerzo.</p></td>
+    <td width="241"><img src="../Imágenes/long bob.jpg" width="241" height="315" /></td>
+    <td width="230"> <B> <p>Long bob</p> </B>
+      <p>Se trata de un corte perfecto para las que quieren un cambio visible pero no drástico.</p></td>
+  </tr>
+  <tr>
+  <td> <img src="../Imágenes/Jenna ortega.jpg" width="241" height="315" /></td>
+  <td> <B> <p>El flequillo cortina</p> </B>
+    <p> Estos se peinan, casi siempre, a través de una onda muy suave y hacia fuera, dándoles forma en el sentido de las agujas del reloj para que el flequillo se abra sutilmente, fundiéndose con el resto de la melena.</p></td>
+  <td><img src="../Imágenes/Flequillo minimal.jpg" width="241" height="315" /></td>
+  <td> <B> <p>El flequillo minimal</p> </B>
+    <p>La clave de este otro estilo reside en dos factores: la poca cantidad de pelo empleada y la forma en que se corta desfilado y acorde a la mandíbula de cada persona. </p></td>
+  </tr>
+  <tr>
+  <td><img src="../Imágenes/middle shag.jpg" width="241" height="305" /></td>
+  <td><p><strong>Shag</strong></p>
+    <p>Lo ideal es llevarlo con un flequillo cortina con las puntas despejadas hacia los lados para enfatizar la inspiración de los setenta. </p></td>
+  <td><img src="../Imágenes/multicapas.jpg" width="241" height="305" /></td>
+  <td><p><font size="+1" face="Times New Roman, Times, serif"><strong>Octopus cut</strong></font></p>
+    <p>Con muchas capas y con flequillos abiertos y volumen superior en la melena para caras redondeadas o cuadradas que buscan volumen en la zona superior de la melena.</p></td> 
+  </tr>
+</table> </FONT> </CENTER>
+
+    
+    
+    
+    
+    
+    <FONT color="#FFA4D1"> <h1>&nbsp;</h1>
+    <U> <h1>Tintes en tendencia </h1> </U>
+    </FONT><FONT size="+2" face="Times New Roman, Times, serif"><p>En términos de coloración, hay una tendencia tan clara que casi se antepone al resto: la naturalidad. Esta se consigue de dos formas: o bien dejando crecer el color de raíz, o bien apostando por unas mechas sutiles y que casi parezcan propias. En este sentido, hablamos de un inesperado 'boom' del pelo castaño, pero también del moreno. Ambos se llevan integrales, casi sin mechas y/o reflejos y bien brillantes. Sin embargo, las rubias pueden estar tranquilas porque también las melenas más claras siguen siendo tendencia. En este caso, crecen en popularidad los subtonos dorados, así como los rubios muy claros pero con raíz natural.</p>
+    <p>&nbsp;</p> 
+    </FONT>
+    
+     <CENTER> <FONT size="+1" face="Times New Roman, Times, serif"><table width="977" border="0">
+  <tr>
+    <td><img src="../Imágenes/bronde.jpg" width="241" height="315" /></td>
+    <td width="230"> <B> <p>Bronde</p> </B>
+      <p>Esta tendencia en coloración nos parece perfecta para las rubias que quieran ser castañas pero de una forma sutil y/o progresiva.</p></td>
+    <td><img src="../Imágenes/rubio.jpg" width="241" height="315" /></td>
+    <td width="230"> <B> <p>Rubio con raíz</p> </B>
+      <p>Hay una microtendencia asociada a la misma y es la de presumir de rubio pero con raíz natural y/o castaña.</p></td>
+  </tr>
+  <tr>
+    <td><img src="../Imágenes/moreno integral.jpg" width="241" height="315" /></td>
+    <td> <B> <p>Moreno integral</p> </B>
+      <p>Las 'celebrities' que lo tienen de forma natural han dejado de teñírselo y las que no, se lo están tiñendo, ahora luce la melena morena más atractiva.</p></td>
+    <td><img src="../Imágenes/alabama.jpg" width="241" height="315" /></td>
+    <td> <B> <p>Alabama Peach</p> </B>
+      <p>Un look castaño </a>caramelo que aporta luminosidad y calidez al rostro con ligeros efectos sunlight. Se consigue realizando un color, muy natural, con multireflejos que van desde el melocotón cobrizo hasta el suave avellana</p></td>
+  </tr>
+</table> </FONT> </CENTER>
+
+    
+    
+    <!-- end .content --></div>
+    
+    
+  <div class="footer">
+    <p align="right"><strong><em>Proyecto de ámbito escolar; estudiante de COBACH Plantel Tecate Capacitación en TIC'S </em></strong><img src="../Imágenes/logo cobach.png" width="267" height="65" /></p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
